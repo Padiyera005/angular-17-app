@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <!-- pepe corresponde al let y el nombre de variable que querramos -->
+         <!-- games corresponde a la clase del componente -->
+          <!-- track-> Consiste en el trackeo del identificador, hacemos un binding de los valores que tenga esa clase con el id -->
+           <!-- basicamente, decimos cual es el identificador unico de cada de cada iteración, suele ser el id -->
+       @for (pepe of games; track pepe.id) {
+              <li>{{pepe.name}}</li>
+       }
+    </ul>
+</body>
+</html>
