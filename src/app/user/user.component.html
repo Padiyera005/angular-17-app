@@ -7,6 +7,25 @@
 }@else{
     <p>Por favor, inicia sesión</p>
 }
+
+
 <button (click)="changestate()">Sesion</button>
-<app-games username="{{ username }}"></app-games>
+
+
+<p *ngIf="isLoggedIn">Hola, {{ username }}</p>
+<img *ngIf="isLoggedIn" 
+    (click)="greet()" 
+    src="https://github.com/padiyera.png" 
+    alt="{{ username }}">
+<p *ngIf="!isLoggedIn">Por favor, inicia sesión</p>
+
+
+<app-games
+(addFav)="getFavorite($event)"
+username="{{ username }}"></app-games>
+
+@if (favGame!='') {
+    <p>Tu juego favorito es {{favGame}}</p>
+}
+<p *ngIf="favGame != ''">Tu juego favorito es {{ favGame }}</p>
 </section>

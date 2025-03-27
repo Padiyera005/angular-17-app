@@ -12,6 +12,11 @@ import { GamesComponent } from '../games/games.component';
 export class UserComponent {
 username= 'yera';
 isLoggedIn = false;
+favGame = '';
+
+getFavorite(gameName: string){
+  this.favGame = gameName;
+}
 
 changestate(){
  if(this.isLoggedIn === true) {

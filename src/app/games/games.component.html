@@ -12,9 +12,17 @@
          <!-- games corresponde a la clase del componente -->
           <!-- track-> Consiste en el trackeo del identificador, hacemos un binding de los valores que tenga esa clase con el id -->
            <!-- basicamente, decimos cual es el identificador unico de cada de cada iteración, suele ser el id -->
-       @for (pepe of games; track pepe.id) {
-              <li>{{pepe.name}}</li>
-       }
+    @for (pepe of games; track pepe.id) {
+        <li (click)="fav(pepe.name)">{{pepe.name}}</li>
+ }
+         <!-- con *ngFor recorro un bucle, tengo que tipar los datos -->
+         <!-- 1.Indico la variable con la que juagaré -->
+          <!-- 2.Indico el array del que iteraremos -->
+           <!--3.Indico el trackeo que haremos(trackBy), en este caso con una funcion(trackById) con la que obtenemos el id de cada elemento del array -->
+            <!-- 4.OPCIONAL. Le añado un evento cn una funcion y un dato que le paso al padre -->
+ <li *ngFor="let deporte of deportes; trackBy: trackById" (click)="fav(deporte.name)">
+    {{ deporte.name }}
+</li>
     </ul>
 </body>
 </html>
